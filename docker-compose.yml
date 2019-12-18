@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web:
+    build: # . # build "Dockerfile".dev in current folder
+      context: . # in current dirrectory (or specific)
+      dockerfile: Dockerfile.dev # file name
+    ports:
+      - "3004:3000"
+    volumes:
+      - /app/node_modules # не мапить папку в контейнере!
+      - .:/app # текущую папку замапить в папку /app контейнера
+
+  tests:
+    build:
+      context: . # current folder
+      dockerfile: Dockerfile.dev # dockerfile name
+    # ports: # порт не нужен так как тесты только
+    #   - "3005:3000"
+    volumes:
+      - /app/node_modules # исключаем папку node_modules
+      - .:/app # текущую папку мапим в папку контейнера app
+    command: ["yarn", "test"] # запуск тестов
