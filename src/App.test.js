@@ -13,3 +13,7 @@ test("renders learn react link 2", () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test("broke test", () => {
+  expect(1).toEqual(2);
+});
