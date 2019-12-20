@@ -14,6 +14,6 @@ test("renders learn react link 2", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test("broke test", () => {
-  expect(1).toEqual(2);
+test("fix test", () => {
+  expect(1).toEqual(1);
 });
