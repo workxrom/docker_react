@@ -25,6 +25,9 @@ deploy:
   on:
     # trigger deploy on new commit in master!
     branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
 # aws
 # docker_react_travis-ci
 # Access key ID - AKIATBTKDO5FJTNQ63FZZ
