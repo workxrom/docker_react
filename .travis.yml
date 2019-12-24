@@ -7,3 +7,25 @@ before_install:
 
 script:
   - docker run nich/docker_react yarn test
+
+# Upload to AWS ...
+deploy:
+  provider: elasticbeanstalk
+  # GET in aws URL
+  # DockerReact-env.vsh8ipdg4b.us-east-2.elasticbeanstalk.co
+  region: "us-east-2"
+  # AWS / All Applications > docker_react > DockerReact-env
+  app: "docker_react"
+  env: "DockerReact-env"
+  # AWS / services / enter s3 and find right one
+  # https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
+  bucket_name: "elasticbeanstalk-us-east-2-209602180938"
+  # "bucket_path" === app name folder in "bucket_name" repository
+  bucket_path: "docker_react"
+  on:
+    # trigger deploy on new commit in master!
+    branch: master
+# aws
+# docker_react_travis-ci
+# Access key ID - AKIATBTKDO5FJTNQ63FZZ
+# 0xdWzjv61OQ2j5G2YQaWEKqCor7YXKkY0NLyfIxuu
