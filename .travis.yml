@@ -5,6 +5,7 @@ services:
 before_install:
   - docker build -t nich/docker_react -f Dockerfile.dev .
 
+# Running tests before merging
 script:
   - docker run nich/docker_react yarn test
 
