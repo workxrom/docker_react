@@ -13,6 +13,9 @@ RUN yarn build # /app/build <- build files
 
 # Second block (after finishing first one)
 FROM nginx
+# Need for AWS elasticBeanstalk auto mapping port
+# and correct work
+EXPOSE 80
 # copy from prev step
 COPY --from=builder /app/build /usr/share/nginx/html
 # nginx container run by default after these commands!

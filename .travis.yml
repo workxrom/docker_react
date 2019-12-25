@@ -27,6 +27,10 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
+# Below code is not working like that =(
+# secret_access_key:
+#  secure: "$AWS_SECRET_KEY"
+
 # aws
 # docker_react_travis-ci
 # Access key ID - AKIATBTKDO5FJTNQ63FZZ
